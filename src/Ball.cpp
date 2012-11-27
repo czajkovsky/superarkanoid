@@ -30,6 +30,8 @@ Ball::Ball(const int &x, const int &y, const int &r, const vec &v, const double 
 	(this->lBR_tmp).reserve(4);
 	(this->lBoR).reserve(4);
 	(this->lBoR_tmp).reserve(4);
+	
+	this->canBeSaved = true;
 }
 
 void Ball::change_speed(const double &speed) {
@@ -59,7 +61,7 @@ void Ball::reflect(const point &w) {
 	//printf("cos: %lf\n", cos_alfa);
 	
 	if (cos_alfa < -0.0/* && w.y < 570*/) {
-		printf("cos: %lf", cos_alfa);
+		//printf("cos: %lf", cos_alfa);
 		swap(mv.x, mv.y);
 		mv.y *= -1; //tylko dla dolnych - jednak dla wszystkich chyba
 		double cos_beta = (rrr.x*mv.x + rrr.y*mv.y)/(drrr*dmv);
@@ -139,7 +141,7 @@ int Ball::move(vbl &blocks, vbo &borders, vbn &bonuses, Platform *plat, int bloc
 			lBoR_tmp.push_back(*it);
 		}
 		else if (w.x != INF && find(*it)) {
-			puts("err 2*lBoR");
+			//puts("err 2*lBoR");
 			lBoR_tmp.push_back(*it);
 			if (center.x > 480) center.x -= 0.7;
 			else center.x += 0.7;
@@ -211,7 +213,7 @@ int Ball::move(vbl &blocks, vbo &borders, vbn &bonuses, Platform *plat, int bloc
 			break;
 		}
 		else if (w.x != INF && find(*it)) {
-			puts("err 2*lBR");
+			//puts("err 2*lBR");
 			lBR_tmp.push_back(*it);
 		}
 	}
@@ -245,7 +247,7 @@ int Ball::move(vbl &blocks, vbo &borders, vbn &bonuses, Platform *plat, int bloc
 	}
 
 
-	if (!plat_col && blocksuntouched[0]) {
+	if (!plat_col && blocksuntouched[0] && canBeSaved) {
 		w=collision(bon_bl);
 		if (w.x != INF) {
 			cc++;
@@ -266,7 +268,7 @@ int Ball::move(vbl &blocks, vbo &borders, vbn &bonuses, Platform *plat, int bloc
 		lBoR.push_back(*it);
 	}
 	
-	if (cc > 1) puts("errrrr");
+	//if (cc > 1) puts("errrrr");
 	if (cc > 1 && plat_col) {
 		mv.x = 0;
 		mv.y = 10;

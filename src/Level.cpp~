@@ -149,6 +149,7 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 										case 2: // controls
 										{
 											bool info = true;
+											screen->drawInfo();
 											while (!exit && info) {
 												while(SDL_PollEvent(&event)) {
 													if (event.type == SDL_QUIT) {
@@ -162,8 +163,8 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 															info = false;
 														}								
 													}
-												}
-												screen->drawInfo();
+													screen->drawInfo();
+												}												
 											}
 											screen->drawLevel(bonuses, blocks, player, blocksuntouched); // zapamiętanie stanu poziomu w buforze 1
 											screen->drawLevel(bonuses, blocks, player, blocksuntouched); // zapamiętanie stanu poziomu w buforze 2
@@ -188,9 +189,10 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 						}
 					}
 				}
+				time_start = SDL_GetTicks();
 			}
 		}
-		int running = 2600/FRAMES_PER_SECOND;
+		int running = 3200/FRAMES_PER_SECOND;
 		while (running > 0) {
 			running--;			
 			if (player->getBallsAlive()>0) {
@@ -254,8 +256,12 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 							def_size = min(player->platform->get_size()+38, 270);
 						}
 						else if(movestatus==3) {
-							if(blocksuntouched[0]==0)
+							if(blocksuntouched[0]==0) {
 								blocksuntouched[0]=1;
+							}
+							for (vba::iterator it2 = player->balls.begin(); it2 != player->balls.end(); it2++) {
+								if ((*it2).getCenter().y > 592) (*it2).canBeSaved = false;
+							}
 						}
 						else if(movestatus==4) {
 							point p;

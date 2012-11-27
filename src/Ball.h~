@@ -22,7 +22,6 @@ class Ball : public Circle {
 		void print();
 		void change_vec(const double &pl_speed, const double &dist);
 		void change_pos(const point &p);
-		bool canBeSaved;
 	protected:
 		point collision(const Rectangle &rec);
 		void reflect(const point &w);
@@ -35,7 +34,8 @@ class Ball : public Circle {
 		vector<Block> lBR, lBR_tmp;
 		vector<Border> lBoR, lBoR_tmp;
 		bool find(Block &bl);
-		bool find(Border &bo);		
+		bool find(Border &bo);
+		bool canBeSaved;
 };
 
 #endif

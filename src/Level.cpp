@@ -188,6 +188,7 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 						}
 					}
 				}
+				time_start = SDL_GetTicks();
 			}
 		}
 		int running = 3200/FRAMES_PER_SECOND;
@@ -254,8 +255,12 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 							def_size = min(player->platform->get_size()+38, 270);
 						}
 						else if(movestatus==3) {
-							if(blocksuntouched[0]==0)
+							if(blocksuntouched[0]==0) {
 								blocksuntouched[0]=1;
+							}
+							for (vba::iterator it2 = player->balls.begin(); it2 != player->balls.end(); it2++) {
+								if ((*it2).getCenter().y > 592) (*it2).canBeSaved = false;
+							}
 						}
 						else if(movestatus==4) {
 							point p;
