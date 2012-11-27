@@ -74,7 +74,7 @@ void Ball::reflect(const point &w) {
 
 const double wsp = 54.0;
 const double wsp2 = 18.0;
-const double dif = 0.7;
+const double dif = 0.9;
 
 void Ball::change_vec(const double &pl_speed, const double &dist) {
 	vec nowy;

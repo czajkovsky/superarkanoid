@@ -4,7 +4,7 @@
 #include <cstdlib>
 using namespace std;
 
-const double bonus_speed = 0.038;
+const double bonus_speed = 0.045;
 
 Bonus::Bonus(const point &center, const double &r, const int &type) : Circle(center, r) {
 	this->type = type;

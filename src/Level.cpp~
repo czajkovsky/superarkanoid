@@ -190,7 +190,7 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 				}
 			}
 		}
-		int running = 3200/FRAMES_PER_SECOND;
+		int running = 2600/FRAMES_PER_SECOND;
 		while (running > 0) {
 			running--;			
 			if (player->getBallsAlive()>0) {

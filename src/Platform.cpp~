@@ -11,7 +11,7 @@ typedef vector<Border> vbo;
 
 
 Platform::Platform(const int &ulx, const int &uly, const int &brx, const int &bry) : Rectangle(ulx, uly, brx, bry) {
-	this->max_speed = 0.0891;
+	this->max_speed = 0.117;
 	this->speed = 0;
 	this->step = 0.00085;
 	this->size = this->getWidth() - 6;
