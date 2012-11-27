@@ -1,0 +1,32 @@
+#ifndef BALL_H
+#define BALL_H
+#include "geo.h"
+#include "Block.h"
+#include "Platform.h"
+#include "Border.h"
+//#include "main.h"
+#include <vector>
+
+class Ball {
+	public:
+		Ball(int x, int y, int r, vec v, double speed);
+		void change_speed(double speed);
+		int move(std::vector<Block> &blocks, std::vector<Border> &borders, Platform plat); //zwraca 1 jeśli trzeba usunąć piłkę i nie było kolizji,
+												// 2 jeśli była kolizja z platformą i trzeba usunąć,
+												// 3 jeśli była kolizja z platformą i nie trzeba usunąć, 4 else
+		void print();
+		point middle();
+		double r();
+		void change_vec(double pl_speed, double dist);
+	protected:
+		point collision(rectangle rec);
+		void reflect(point w);
+	private:
+		circle cir;
+		vec mv;
+		double base_speed;
+		double speed, time_remaining;
+		bool moze_odbic_sie_od_platformy;
+};
+
+#endif

@@ -1,0 +1,10 @@
+
+vsky@czajkovsky-lap-linux:~/Pulpit/Arkanoid RC$ make
+g++ -c src/Ball.cpp -o obj/Ball.cpp.o -Wall -lSDL -lSDL_image
+src/Ball.cpp: In member function ‘int Ball::move(vbl&, vbo&, Platform)’:
+src/Ball.cpp:86: error: no matching function for call to ‘Ball::change_vec(int, int)’
+src/Ball.cpp:55: note: candidates are: void Ball::change_vec(double)
+src/Ball.cpp:128: error: no matching function for call to ‘Ball::change_vec(double, int)’
+src/Ball.cpp:55: note: candidates are: void Ball::change_vec(double)
+make: *** [obj/Ball.cpp.o] Błąd 1
+

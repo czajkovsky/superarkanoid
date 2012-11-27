@@ -1,0 +1,29 @@
+--- 2012-11-08 02:04 <czaja>
+	zmiana rozmiaru piłki (r=12)
+	podmiana grafik
+	początek bonusów (wyświetlanie, kolizja z platformą)
+
+--- 2012-11-08 02:19 <czaja>
+	zakomentowanie wszystkich coutow
+	nie działa mi ten jebany rand(), zajrzyj do ball.cpp, linia 128
+
+--- 2012-11-08 14:50 <czaja>
+	rand() już działa :D
+	w platform.cpp funkcja change_size(int size), get_size()
+	w main.cpp 2 typy bonusów (zwiększ/zmniejsz platformę)
+	nowe bitmapy
+
+--- 2012-11-08 14:50 <adi>
+	poprawienie bugu z piłką lecącą równolegle do ściany
+	start z platformy na początku i po stracie piłki
+	
+--- 2012-11-09 18:31 <adi>
+	Ball.cpp
+		poprawione drobne błędy przy odbiciu od tacki
+		poprawione odbicia od bloków
+	main.cpp
+		timery
+		poprawione wyświetlanie bloków i piłki
+		losowy kierunek piłki na starcie
+
+

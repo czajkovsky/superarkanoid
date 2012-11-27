@@ -1,0 +1,61 @@
+--- 2012-11-15 22:59 <adi>
+	wyciek pamięci przy fontach
+
+--- 2012-11-15 19:49 <adi>
+	menu pauzy
+	animowane wydłużenie tacki
+	drobne błędy
+	trochę inny kolor menu(oczy mi się zmęczyły od cyana :D)
+	
+--- 2012-11-14 10:32 <adi>
+	błędy przy odbiciach
+	
+--- 2012-11-13 13:11 <czaja>
+	bonus moreBalls
+
+--- 2012-11-12
+	wczytywanie leveli z plików
+	przejście do nast levelu
+
+--- 2012-11-10 15:00 <czaja>
+	bonus block dolny
+
+--- 2012-11-10 12:20 <adi>
+	poprawiony Makefile(po zmianie plików .h wszystko kompiluje się od początku teraz)
+	nowa klasa Screen
+	dodana funkcjonalność klasy Level
+	porządek w main.cpp
+	zobacz okolice 60 linii w Screen.cpp
+
+--- 2012-11-09 22:56 <adi>
+	nowe klasy Player(dziedziczy po Platform) i Level(na razie pusta)
+	poprawa błędu w Ball.cpp
+
+--- 2012-11-09 18:31 <adi>
+	Ball.cpp
+		poprawione drobne błędy przy odbiciu od tacki
+		poprawione odbicia od bloków
+	main.cpp
+		timery
+		poprawione wyświetlanie bloków i piłki
+		losowy kierunek piłki na starcie
+	nowe plansze
+	
+--- 2012-11-08 14:50 <czaja>
+	rand() już działa :D
+	w platform.cpp funkcja change_size(int size), get_size()
+	w main.cpp 2 typy bonusów (zwiększ/zmniejsz platformę)
+	nowe bitmapy
+
+--- 2012-11-08 14:50 <adi>
+	poprawienie bugu z piłką lecącą równolegle do ściany
+	start z platformy na początku i po stracie piłki
+
+--- 2012-11-08 02:19 <czaja>
+	zakomentowanie wszystkich coutow
+	nie działa mi ten jebany rand(), zajrzyj do ball.cpp, linia 128
+	
+--- 2012-11-08 02:04 <czaja>
+	zmiana rozmiaru piłki (r=12)
+	podmiana grafik
+	początek bonusów (wyświetlanie, kolizja z platformą)

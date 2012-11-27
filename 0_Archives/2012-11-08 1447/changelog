@@ -1,0 +1,9 @@
+--- 2012-11-07 02:04 <czaja>
+	zmiana rozmiaru piłki (r=12)
+	podmiana grafik
+	początek bonusów (wyświetlanie, kolizja z platformą)
+
+--- 2012-11-07 02:19 <czaja>
+	zakomentowanie wszystkich coutow
+	nie działa mi ten jebany rand(), zajrzyj do ball.cpp, linia 128
+

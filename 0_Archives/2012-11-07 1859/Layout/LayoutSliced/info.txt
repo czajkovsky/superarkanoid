@@ -1,0 +1,30 @@
+# Colours
+
+cyan: #00ffd2, RGB(0 255 210)
+white: #ffffff, RGB(255 255 255)
+blue: #232c38, RGB(35 44 54)
+
+
+# Objects:
+
+Blocks {
+	img-size:
+	real-size:
+}
+Pad@Normal {
+	img-size:
+	real-size:
+}
+Pad@Small {
+	img-size:
+	real-size:
+}
+Pad@Big {
+	img-size:
+	real-size:
+}
+Ball {
+	img-size:
+	real-size:
+}
+	
