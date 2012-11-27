@@ -30,8 +30,6 @@ Ball::Ball(const int &x, const int &y, const int &r, const vec &v, const double 
 	(this->lBR_tmp).reserve(4);
 	(this->lBoR).reserve(4);
 	(this->lBoR_tmp).reserve(4);
-	
-	this->canBeSaved = true;
 }
 
 void Ball::change_speed(const double &speed) {
@@ -199,7 +197,7 @@ int Ball::move(vbl &blocks, vbo &borders, vbn &bonuses, Platform *plat, int bloc
 					4 - dodaj 2 nowe piłki
 					5 - dodaj życie
 				*/
-				//bonustype=2;
+				//bonustype=3;
 			}
 
 			if(chanceforbonus) {
@@ -247,7 +245,7 @@ int Ball::move(vbl &blocks, vbo &borders, vbn &bonuses, Platform *plat, int bloc
 	}
 
 
-	if (!plat_col && blocksuntouched[0] && canBeSaved) {
+	if (!plat_col && blocksuntouched[0]) {
 		w=collision(bon_bl);
 		if (w.x != INF) {
 			cc++;

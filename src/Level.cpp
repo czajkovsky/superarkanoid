@@ -254,12 +254,13 @@ void Level::playLevel(Player *player, Screen *screen, bool &died, bool &exit) {
 						else if(movestatus==2) {
 							def_size = min(player->platform->get_size()+38, 270);
 						}
-						else if(movestatus==3) {
-							if(blocksuntouched[0]==0) {
-								blocksuntouched[0]=1;
-							}
+						else if(movestatus==3) {							
+							bool possible = true;
 							for (vba::iterator it2 = player->balls.begin(); it2 != player->balls.end(); it2++) {
-								if ((*it2).getCenter().y > 592) (*it2).canBeSaved = false;
+								if ((*it2).getCenter().y > 581) possible = false;
+							}
+							if(blocksuntouched[0]==0 && possible) {
+								blocksuntouched[0]=1;
 							}
 						}
 						else if(movestatus==4) {

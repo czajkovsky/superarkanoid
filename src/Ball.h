@@ -22,7 +22,6 @@ class Ball : public Circle {
 		void print();
 		void change_vec(const double &pl_speed, const double &dist);
 		void change_pos(const point &p);
-		bool canBeSaved;
 	protected:
 		point collision(const Rectangle &rec);
 		void reflect(const point &w);
